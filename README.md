@@ -1,7 +1,7 @@
 # FU-LoRA
 This fine-tuned Latent Diffusion Model (LDM) is trained with [kohya_ss LoRA](https://github.com/kohya-ss/sd-scripts) method.
 
-## Installation
+## kohya-ss Installation
 ```bash
 git clone https://github.com/kohya-ss/sd-scripts.git
 cd sd-scripts
@@ -26,12 +26,12 @@ Answers to accelerate config:
 - fp16
 ```
 
-## Fine-tuning SD with LoRA
+## Fine-tuning LDM with LoRA
 ![LoRA fine-tuning pipeline](/assests/fu_lora_approach.png)
 
-## Fine-tuning LDM with Dataset
+## Fine-tuning LDM with Spanish Dataset
 The common maternal fetal ultrasound planes [1]. The summary of this dataset.
-| Category | No. Train | No. Test | No. Train (LoRA) |
+| Category | Total Train | Total Test | No. Train (LoRA) |
 | ----------- | ----------- | ----------- | ----------- |
 | abdomen | 353  | 358  | 20 |
 | brain   | 1620 | 1472 | 20 |
@@ -108,5 +108,19 @@ An example (**fetal abdomen**) of LoRA training configuration.
 }
 ```
 
-## Zero-shot Classification
+## FU-LoRA: LoRA Models 
+All LoRA models are available on [HaggingFace](https://huggingface.co/fangyijie/fu-lora)
+| LoRA Model | Rank | Link |
+| ----------- | ----------- | ----------- |
+| fetal_ultrasound_v1.0.safetensors | 128 | [url](https://huggingface.co/fangyijie/fu-lora/blob/main/fetal_ultrasound_v1.0.safetensors) |
+| fetal_ultrasound_v2.0.safetensors | 32 | [url](https://huggingface.co/fangyijie/fu-lora/blob/main/fetal_ultrasound_v2.0.safetensors) |
+| fetal_ultrasound_v3.0.safetensors | 8 | [url](https://huggingface.co/fangyijie/fu-lora/blob/main/fetal_ultrasound_v3.0.safetensors) |
+
+## Examples of Generated Synthetic Images
+![Synthetic Images](/assests/synthetic_img_examples.png)
+
+## Zero-shot Classification on African Dataset
 ![Zero-shot Classification Results](/assests/cls_results.png)
+
+## Reference
+[1] Burgos-Artizzu, X.P., Coronado-Gutiérrez, D., Valenzuela-Alcaraz, B. et al. Evaluation of deep convolutional neural networks for automatic classification of common maternal fetal ultrasound planes. Sci Rep 10, 10200 (2020). https://doi.org/10.1038/s41598-020-67076-5
