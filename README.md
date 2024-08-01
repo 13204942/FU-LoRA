@@ -112,9 +112,9 @@ An example (**fetal abdomen**) of LoRA training configuration.
 All LoRA models are available on [HaggingFace](https://huggingface.co/fangyijie/fu-lora)
 | LoRA Model | Rank | Link |
 | ----------- | ----------- | ----------- |
-| fetal_ultrasound_v1.0.safetensors | 128 | [url](https://huggingface.co/fangyijie/fu-lora/blob/main/fetal_ultrasound_v1.0.safetensors) |
-| fetal_ultrasound_v2.0.safetensors | 32 | [url](https://huggingface.co/fangyijie/fu-lora/blob/main/fetal_ultrasound_v2.0.safetensors) |
-| fetal_ultrasound_v3.0.safetensors | 8 | [url](https://huggingface.co/fangyijie/fu-lora/blob/main/fetal_ultrasound_v3.0.safetensors) |
+| fetal_ultrasound_v1.0.safetensors | 128 | [URL](https://huggingface.co/fangyijie/fu-lora/blob/main/fetal_ultrasound_v1.0.safetensors) |
+| fetal_ultrasound_v2.0.safetensors | 32 | [URL](https://huggingface.co/fangyijie/fu-lora/blob/main/fetal_ultrasound_v2.0.safetensors) |
+| fetal_ultrasound_v3.0.safetensors | 8 | [URL](https://huggingface.co/fangyijie/fu-lora/blob/main/fetal_ultrasound_v3.0.safetensors) |
 
 ## Examples of Generated Synthetic Images
 ![Synthetic Images](/assests/synthetic_img_examples.png)
