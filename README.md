@@ -29,6 +29,11 @@ Answers to accelerate config:
 ## Fine-tuning LDM with LoRA
 ![LoRA fine-tuning pipeline](/assests/fu_lora_approach.png)
 
+## Pre-trained LDM
+| Name | Size | Website |
+| ----------- | ----------- | ----------- |
+| [v1-5-pruned.ckpt](https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned.ckpt)[2] | 7.7GB  | [HuggingFace](https://huggingface.co/runwayml/stable-diffusion-v1-5) |
+
 ## Fine-tuning LDM with Spanish Dataset
 The common maternal fetal ultrasound planes [1]. The summary of this dataset.
 | Category | Total Train | Total Test | No. Train (LoRA) |
@@ -124,3 +129,5 @@ All LoRA models are available on [HaggingFace](https://huggingface.co/fangyijie/
 
 ## Reference
 [1] Burgos-Artizzu, X.P., Coronado-Gutiérrez, D., Valenzuela-Alcaraz, B. et al. Evaluation of deep convolutional neural networks for automatic classification of common maternal fetal ultrasound planes. Sci Rep 10, 10200 (2020). https://doi.org/10.1038/s41598-020-67076-5
+
+[2] Rombach, R., Blattmann, A., Lorenz, D., Esser, P., & Ommer, B. (2022, June). High-Resolution Image Synthesis With Latent Diffusion Models. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 10684–10695.
