@@ -1,5 +1,5 @@
 # FU-LoRA
-This fine-tuned Latent Diffusion Model (LDM) is trained with [kohya_ss LoRA](https://github.com/kohya-ss/sd-scripts) method.
+This fine-tuned Latent Diffusion Model (LDM) is trained with LoRA method with [kohya_ss LoRA](https://github.com/kohya-ss/sd-scripts).
 
 ## kohya-ss Installation
 ```bash
