@@ -121,6 +121,9 @@ All LoRA models are available on [HaggingFace](https://huggingface.co/fangyijie/
 | fetal_ultrasound_v2.0.safetensors | 32 | [URL](https://huggingface.co/fangyijie/fu-lora/blob/main/fetal_ultrasound_v2.0.safetensors) |
 | fetal_ultrasound_v3.0.safetensors | 8 | [URL](https://huggingface.co/fangyijie/fu-lora/blob/main/fetal_ultrasound_v3.0.safetensors) |
 
+## Synthetic Dataset
+The dataset is publicly available at URL: https://zenodo.org/records/13228158
+
 ## Examples of Generated Synthetic Images
 ![Synthetic Images](/assests/synthetic_img_examples.png)
 
