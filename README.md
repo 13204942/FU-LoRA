@@ -130,6 +130,16 @@ The dataset is publicly available at URL: https://zenodo.org/records/13228158
 ## Zero-shot Classification on African Dataset
 ![Zero-shot Classification Results](/assests/cls_results.png)
 
+## Citation
+```
+@misc{2407.20072,
+  Author = {Fangyijie Wang and Kevin Whelan and Guénolé Silvestre and Kathleen M. Curran},
+  Title = {Generative Diffusion Model Bootstraps Zero-shot Classification of Fetal Ultrasound Images In Underrepresented African Populations},
+  Year = {2024},
+  Eprint = {arXiv:2407.20072},
+}
+```
+
 ## Reference
 [1] Burgos-Artizzu, X.P., Coronado-Gutiérrez, D., Valenzuela-Alcaraz, B. et al. Evaluation of deep convolutional neural networks for automatic classification of common maternal fetal ultrasound planes. Sci Rep 10, 10200 (2020). https://doi.org/10.1038/s41598-020-67076-5
 
