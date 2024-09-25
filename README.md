@@ -1,4 +1,8 @@
-# FU-LoRA
+## Generative Diffusion Model Bootstraps Zero-shot Classification of Fetal Ultrasound Images In Underrepresented African Populations
+This project is an implementation of the paper ["Generative Diffusion Model Bootstraps Zero-shot Classification of 
+Fetal Ultrasound Images In Underrepresented African Populations"](https://arxiv.org/abs/2407.20072), accepted at [MICCAI Workshop PIPPI 2024].
+
+## FU-LoRA
 This fine-tuned Latent Diffusion Model (LDM) is trained with LoRA method with [kohya_ss LoRA](https://github.com/kohya-ss/sd-scripts).
 
 ## kohya-ss Installation
