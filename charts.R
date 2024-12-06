@@ -32,7 +32,7 @@ p
 
 df <- read.csv("overall_performance.csv")
 
-subcols <- c("Data", "Model", "F.score")
+subcols <- c("Data", "Model", "ACC")
 sub_df <- df[subcols]
 
 models <- unique(sub_df$Model)
@@ -45,17 +45,17 @@ par(mar=c(5,4,4,4))
 #myPalette <- c("#f6d094","#eef396","#addd95","#9bd8b2","#8fd4c8")
 #myPalette <- c("#f6d094","#eef396","#addd95","#76cb99","#8da0ec")
 #myPalette <- c("#2e6eba","#eeaa09","#c20383","#7f5dc3","#e17324")
-myPalette <- c("#e54d36","#45a9ba","#3aa088","#3c5586","#f09b81")
+myPalette <- c("#caddee","#a5c6e2","#80afd6","#3c5586","#f09b81")
 
 
-p <- ggplot(sub_df, aes(x = Data, y = F.score, fill = Model)) + 
+p <- ggplot(sub_df, aes(x = Data, y = ACC, fill = Model)) + 
   #scale_x_continuous("", breaks=c(-0.25,0.25,0.75,1.25,1.75,2.25,2.75,3.25), labels=rep(c("Female","Male"), times=4)) +
   scale_fill_manual(values = myPalette) +
-  geom_col(aes(y = F.score), position = "dodge") +
-  geom_text(aes(label = round(F.score, digits = 1)), 
-            vjust = -0.7, 
-            size = 4,
-            position = position_dodge(width = 0.9)) +
+  geom_col(aes(y = ACC), position = "dodge") +
+  #geom_text(aes(label = round(AUC, digits = 1)), 
+  #          vjust = -0.7, 
+  #          size = 4,
+  #          position = position_dodge(width = 0.9)) +
   theme_bw() +
   #theme_update(axis.ticks.x = element_blank(), axis.text.x = element_blank()) +
   ylim(0, 100) +
@@ -63,9 +63,11 @@ p <- ggplot(sub_df, aes(x = Data, y = F.score, fill = Model)) +
         text = element_text(size = 18, family="PT Sans"),
         axis.title.x=element_blank(),
         axis.title.y=element_blank(),
-        #legend.position="none"
-        legend.direction='horizontal'
-        )
+        legend.position="none"
+        #legend.direction='horizontal'
+        ) + 
+  #geom_hline(yintercept=82.5, color = "#C00000", linetype="dashed", size=0.8)
+  geom_hline(yintercept=68.7, color = "#C00000", linetype="dashed", size=0.8)
 
 p
 
