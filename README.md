@@ -33,6 +33,61 @@ Answers to accelerate config:
 ## Fine-tuning LDM with LoRA
 ![LoRA fine-tuning pipeline](/assests/fu_lora_approach.png)
 
+The fine-tuning method is based on [Kohya's Stable Diffusion trainers](https://github.com/kohya-ss/sd-scripts).
+
+### Setup Training Data Directory
+```
+root
+  - fetal_ultrasound
+    - img
+      - <num_epochs>_fetal # here we set num_epochs=20
+        - Patient00001_Plane1.png
+        - Patient00001_Plane1.txt
+        - Patient00002_Plane1.png
+        - Patient00002_Plane1.txt
+        - Patient00003_Plane1.png
+        - Patient00003_Plane1.txt
+        ...
+        ...
+    - log
+    - output
+```
+
+### Example: Train LDM (LoRA) for Fetal Ultrasound
+```shell
+accelerate launch --num_cpu_threads_per_process=2 "train_network.py" \
+ --enable_bucket
+ --pretrained_model_name_or_path="./sd_ckpt/v1-5-pruned.safetensors" \ # SD_v1.5 model
+ --train_data_dir="/root/fetal_ultrasound/img" \ # image folder
+ --resolution=512,512 # resize images to (512, 512)
+ --output_dir="/root/fetal_ultrasound/output" \ # save LoRA model
+ --logging_dir="/root/fetal_ultrasound/log" \
+ --network_alpha="128" \ # rank = 128, 32, 8
+ --save_model_as=safetensors
+ --network_module=networks.lora
+ --text_encoder_lr=5e-5
+ --unet_lr=0.0001
+ --network_dim=128
+ --output_name="fetal_ultrasound_v1.0" \ # saved LoRA model name
+ --lr_scheduler_num_cycles="1" \
+ --learning_rate="0.0001" \
+ --lr_scheduler="constant" \
+ --train_batch_size="1" \
+ --max_train_steps="2000" \
+ --save_every_n_epochs="1" \
+ --mixed_precision="fp16" \
+ --save_precision="fp16" \
+ --seed="1234" \
+ --caption_extension=".txt" \ # prompt text file
+ --cache_latents
+ --optimizer_type="AdamW8bit" \
+ --max_train_epochs="1" \
+ --max_data_loader_n_workers="1" \
+ --clip_skip=2
+ --bucket_reso_steps=64
+ --bucket_no_upscale
+```
+
 ## Pre-trained LDM
 | Name | Size | Website |
 | ----------- | ----------- | ----------- |
